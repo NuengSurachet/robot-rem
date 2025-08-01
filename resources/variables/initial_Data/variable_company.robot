@@ -11,6 +11,10 @@ ${CompanyNameEng}    xpath=//input[@datamember='CompanyNameEng']
 ${phone}    xpath=//tbody/tr[12]/td[2]/input[1]
 ${save_company}    xpath=//lg[contains(text(),'บันทึก')]
 ${search_text}    xpath=//input[@id='txtSearchText']
-${OK_Button}    xpath=//button[contains(@class, 'ui-button') and contains(., 'ตกลง')]
-# Data Variables
-${CompanyID_Value}    36866
+${OK_Button}    xpath=//button[contains(@class, 'ui-button') and contains(., 'ตกลง')] 
+${search_button}    xpath=//button[@id='btSearch']
+${activate_button}    xpath=//img[@id='dImg']
+${accept_button}    xpath=//span[contains(text(),'ตกลง')]
+${settings_button}    xpath=//i[contains(@class, 'fa-setting')]
+${monney_input}    xpath=//input[@value='1000']
+${save_button}    xpath=//button[.//span[text()='บันทึก']]

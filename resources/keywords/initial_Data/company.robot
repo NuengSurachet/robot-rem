@@ -27,4 +27,17 @@ check add new company
     Press Keys      None    TAB
     Press Keys      None    Enter
     Input Text    ${search_text}    ${random_company_id}
-    Press Keys      None    Enter
+    Sleep    1s
+    Click Element    ${search_button}
+    Sleep    2s
+    Click Element    ${activate_button}
+    Click Element    ${accept_button}
+    Sleep    2s
+    Click Element    ${activate_button}
+    Click Element    ${accept_button}
+    Sleep    2s
+    Click Element    ${settings_button}
+    Sleep    2s
+    Input Text    ${monney_input}    100
+    Sleep    2s
+    Click Element    ${save_button}
