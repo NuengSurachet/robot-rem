@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.5 on win32)" generated="2025-07-17T15:11:02.663131" rpa="false" schemaversion="5">
+<suite id="s1" name="Po Test" source="c:\robotframework\robot-framework\tests\ui_tests\po\po_test.robot">
+<test id="s1-t1" name="Create PO" line="9">
+<kw name="Login To Application" owner="common_keywords" type="SETUP">
+<kw name="Open Browser To Login Page" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:05.723324" level="INFO">Opening browser 'Chrome' to base url 'https://std-cm.iconcm.com/newrelease/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-17T15:11:05.722970" elapsed="4.536954"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.260460" elapsed="0.062217"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:10.367081" level="INFO">Current page contains text 'https://std-cm.iconcm.com/newrelease/'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.323179" elapsed="0.044374"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:05.722355" elapsed="4.645433"/>
+</kw>
+<kw name="Input Login Credentials" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:10.369500" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="inputEmail"]'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.368816" elapsed="0.187509"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:10.557146" level="INFO">Typing password into text field 'xpath=//input[@id='inputPassword']'.</msg>
+<msg time="2025-07-17T15:11:10.594561" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.556729" elapsed="0.092350"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-07-17T15:11:10.368129" elapsed="0.281140"/>
+</kw>
+<kw name="Click Login Button" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:10.649969" level="INFO">Clicking element 'xpath=//button[@id='login_id']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.649756" elapsed="0.083051"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:10.649483" elapsed="0.083594"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:05.721339" elapsed="5.011890"/>
+</kw>
+<kw name="Disable Automatic Screenshots" owner="common_keywords">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:10.734948" level="INFO">No keyword will be run on failure.</msg>
+<arg>NONE</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.734508" elapsed="0.001411"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:10.733913" elapsed="0.002314"/>
+</kw>
+<kw name="Select Company" owner="common_keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T15:11:12.739281" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T15:11:10.738220" elapsed="2.001330"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:12.740053" level="INFO">Searching for company: ICON - ICON Framework Co.,Ltd.</msg>
+<arg>Searching for company: ${company_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:12.739775" elapsed="0.000405"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T15:11:12.740632" level="INFO">${xpath} = //div[@id='load_num_doc']//h6[contains(text(),'ICON - ICON Framework Co.,Ltd.')]/ancestor::div[contains(@class,'col-lg-3')]</msg>
+<var>${xpath}</var>
+<arg>//div[@id='load_num_doc']//h6[contains(text(),'${company_name}')]/ancestor::div[contains(@class,'col-lg-3')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T15:11:12.740348" elapsed="0.000384"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T15:11:12.741386" level="INFO">${xpath_alt} = //div[@id='load_num_doc']//h6[contains(.,'ICON - ICON Framework Co.,Ltd.')]/ancestor::div[contains(@class,'col-lg-3')]</msg>
+<var>${xpath_alt}</var>
+<arg>//div[@id='load_num_doc']//h6[contains(.,'${company_name}')]/ancestor::div[contains(@class,'col-lg-3')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T15:11:12.740907" elapsed="0.000667"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:14.322424" level="INFO">${element_count} = 1</msg>
+<var>${element_count}</var>
+<arg>${xpath}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:12.741831" elapsed="1.580882"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:14.323386" level="INFO">Found 1 elements with first XPath</msg>
+<arg>Found ${element_count} elements with first XPath</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:14.323008" elapsed="0.000582"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} == 0">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${element_count}</var>
+<arg>${xpath_alt}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.324210" elapsed="0.000118"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Found ${element_count} elements with alternative XPath</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.324574" elapsed="0.000097"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${xpath}</var>
+<arg>${xpath_alt}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.324840" elapsed="0.000095"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:14.323805" elapsed="0.001240"/>
+</branch>
+<status status="PASS" start="2025-07-17T15:11:14.323764" elapsed="0.001386"/>
+</if>
+<if>
+<branch type="IF" condition="${element_count} == 0">
+<kw name="Split String" owner="String">
+<var>${company_parts}</var>
+<arg>${company_name}</arg>
+<arg>-</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.325534" elapsed="0.000122"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${first_part}</var>
+<arg>${company_parts}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.325831" elapsed="0.000105"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${xpath}</var>
+<arg>//div[@id='load_num_doc']//h6[contains(.,'${first_part}')]/ancestor::div[contains(@class,'col-lg-3')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.326120" elapsed="0.000117"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${element_count}</var>
+<arg>${xpath}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.326409" elapsed="0.000087"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Found ${element_count} elements with first part of company name: ${first_part}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:14.326851" elapsed="0.000100"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:14.325229" elapsed="0.001815"/>
+</branch>
+<status status="PASS" start="2025-07-17T15:11:14.325206" elapsed="0.001927"/>
+</if>
+<if>
+<branch type="IF" condition="${element_count} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:14.327793" level="INFO">Found company element, clicking on it</msg>
+<arg>Found company element, clicking on it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:14.327519" elapsed="0.000434"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:14.328513" level="INFO">Clicking element '//div[@id='load_num_doc']//h6[contains(text(),'ICON - ICON Framework Co.,Ltd.')]/ancestor::div[contains(@class,'col-lg-3')]'.</msg>
+<arg>${xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:14.328175" elapsed="0.069106"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T15:11:16.398565" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T15:11:14.397861" elapsed="2.001103"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T15:11:16.399506" level="INFO">${login_icon} = //div[@id='load_num_doc']//h6[contains(text(),'ICON - ICON Framework Co.,Ltd.')]/ancestor::div[contains(@class,'col-lg-3')]//i[contains(@class,'glyphicon-log-in')]</msg>
+<var>${login_icon}</var>
+<arg>${xpath}//i[contains(@class,'glyphicon-log-in')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T15:11:16.399215" elapsed="0.000407"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:16.413312" level="INFO">${login_button_count} = 1</msg>
+<var>${login_button_count}</var>
+<arg>${login_icon}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:16.399802" elapsed="0.013803"/>
+</kw>
+<if>
+<branch type="IF" condition="${login_button_count} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:16.414520" level="INFO">Found login icon, clicking on it</msg>
+<arg>Found login icon, clicking on it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:16.414320" elapsed="0.000337"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:16.415136" level="INFO">Clicking element '//div[@id='load_num_doc']//h6[contains(text(),'ICON - ICON Framework Co.,Ltd.')]/ancestor::div[contains(@class,'col-lg-3')]//i[contains(@class,'glyphicon-log-in')]'.</msg>
+<arg>${login_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:16.414860" elapsed="1.213100"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T15:11:19.628750" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T15:11:17.628315" elapsed="2.000882"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:16.413880" elapsed="3.215570"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Login icon not found within the company element</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.630036" elapsed="0.000172"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:19.629656" elapsed="0.000721"/>
+</branch>
+<status status="PASS" start="2025-07-17T15:11:16.413843" elapsed="3.216679"/>
+</if>
+<status status="PASS" start="2025-07-17T15:11:14.327200" elapsed="5.303367"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Company not found by name. Attempting to click on the second company as a fallback</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.630948" elapsed="0.000150"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${company_count}</var>
+<arg>xpath://div[@id='load_num_doc']/div/div[contains(@class,'col-lg-3')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.631397" elapsed="0.000142"/>
+</kw>
+<if>
+<branch type="IF" condition="${company_count} &gt;= 2">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${fallback_company}</var>
+<arg>xpath://div[@id='load_num_doc']/div/div[contains(@class,'col-lg-3')][2]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.631923" elapsed="0.000097"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${fallback_company}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.632193" elapsed="0.000081"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.632435" elapsed="0.000090"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Clicked on the second company as a fallback</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.632672" elapsed="0.000091"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${login_icon}</var>
+<arg>${fallback_company}//i[contains(@class,'glyphicon-log-in')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.632949" elapsed="0.000097"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${login_button_count}</var>
+<arg>${login_icon}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.633264" elapsed="0.000105"/>
+</kw>
+<if>
+<branch type="IF" condition="${login_button_count} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<arg>Found login icon in fallback company, clicking on it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.633677" elapsed="0.000100"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${login_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.633935" elapsed="0.000079"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.634155" elapsed="0.000078"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:19.633507" elapsed="0.000815"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Login icon not found within the fallback company element</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.634576" elapsed="0.000091"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:19.634425" elapsed="0.000338"/>
+</branch>
+<status status="NOT RUN" start="2025-07-17T15:11:19.633486" elapsed="0.001380"/>
+</if>
+<status status="NOT RUN" start="2025-07-17T15:11:19.631712" elapsed="0.003184"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Company '${company_name}' not found and no fallback available</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.635132" elapsed="0.000091"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Company '${company_name}' not found in the list</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:19.635389" elapsed="0.000093"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:19.634978" elapsed="0.000785"/>
+</branch>
+<status status="NOT RUN" start="2025-07-17T15:11:19.631684" elapsed="0.004193"/>
+</if>
+<status status="NOT RUN" start="2025-07-17T15:11:19.630682" elapsed="0.005216"/>
+</branch>
+<status status="PASS" start="2025-07-17T15:11:14.327180" elapsed="5.308763"/>
+</if>
+<arg>ICON - ICON Framework Co.,Ltd.</arg>
+<status status="PASS" start="2025-07-17T15:11:10.737449" elapsed="8.898540"/>
+</kw>
+<kw name="Select Menu" owner="common_keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T15:11:21.637925" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T15:11:19.637201" elapsed="2.001046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:21.639673" level="INFO">Searching for menu: ระบบจัดการในสำนักงาน</msg>
+<arg>Searching for menu: ${menu_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:21.638552" elapsed="0.001386"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T15:11:21.640591" level="INFO">${menu_xpath} = //div[contains(@class,'panel-flat')]//h6[contains(@class,'panel-title') and contains(text(),'ระบบจัดการในสำนักงาน')]/ancestor::a</msg>
+<var>${menu_xpath}</var>
+<arg>//div[contains(@class,'panel-flat')]//h6[contains(@class,'panel-title') and contains(text(),'${menu_name}')]/ancestor::a</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T15:11:21.640225" elapsed="0.000494"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:21.665361" level="INFO">${menu_count} = 1</msg>
+<var>${menu_count}</var>
+<arg>${menu_xpath}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:21.640916" elapsed="0.024623"/>
+</kw>
+<if>
+<branch type="IF" condition="${menu_count} == 0">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${menu_xpath}</var>
+<arg>//div[contains(@class,'panel-flat')]//h6[contains(@class,'panel-title') and contains(.,'${menu_name}')]/ancestor::a</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:21.666434" elapsed="0.000120"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${menu_count}</var>
+<arg>${menu_xpath}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:21.666766" elapsed="0.000104"/>
+</kw>
+<status status="NOT RUN" start="2025-07-17T15:11:21.665795" elapsed="0.001198"/>
+</branch>
+<status status="PASS" start="2025-07-17T15:11:21.665726" elapsed="0.001372"/>
+</if>
+<if>
+<branch type="IF" condition="${menu_count} &gt; 0">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T15:11:21.667976" level="INFO">Found menu: ระบบจัดการในสำนักงาน, clicking on it</msg>
+<arg>Found menu: ${menu_name}, clicking on it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T15:11:21.667621" elapsed="0.000711"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-17T15:11:21.669003" level="INFO">Clicking element '//div[contains(@class,'panel-flat')]//h6[contains(@class,'panel-title') and contains(text(),'ระบบจัดการในสำนักงาน')]/ancestor::a'.</msg>
+<arg>${menu_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-17T15:11:21.668611" elapsed="0.558607"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T15:11:24.228596" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T15:11:22.227675" elapsed="2.001334"/>
+</kw>
+<status status="PASS" start="2025-07-17T15:11:21.667186" elapsed="2.561987"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>@{menu_elements}</var>
+<arg>//div[contains(@class,'panel-flat')]//h6[contains(@class,'panel-title')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.229674" elapsed="0.000160"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>${FALSE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.230097" elapsed="0.000113"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${menu_text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.230955" elapsed="0.000126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Found menu item: ${menu_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.231305" elapsed="0.000121"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${contains}</var>
+<arg>Should Contain</arg>
+<arg>${menu_text}</arg>
+<arg>${menu_name}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.231602" elapsed="0.000081"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${contains_reverse}</var>
+<arg>Should Contain</arg>
+<arg>${menu_name}</arg>
+<arg>${menu_text}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.232079" elapsed="0.000137"/>
+</kw>
+<if>
+<branch type="IF" condition="${contains} or ${contains_reverse}">
+<kw name="Log" owner="BuiltIn">
+<arg>Found matching menu: ${menu_name} in ${menu_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.232621" elapsed="0.000128"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}/ancestor::a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.232968" elapsed="0.000155"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.233313" elapsed="0.000094"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${found}</var>
+<arg>${TRUE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.233574" elapsed="0.000144"/>
+</kw>
+<break>
+<status status="NOT RUN" start="2025-07-17T15:11:24.233851" elapsed="0.000121"/>
+</break>
+<status status="NOT RUN" start="2025-07-17T15:11:24.232418" elapsed="0.001655"/>
+</branch>
+<status status="NOT RUN" start="2025-07-17T15:11:24.232355" elapsed="0.001812"/>
+</if>
+<var name="${element}"/>
+<status status="NOT RUN" start="2025-07-17T15:11:24.230680" elapsed="0.003521"/>
+</iter>
+<var>${element}</var>
+<value>@{menu_elements}</value>
+<status status="NOT RUN" start="2025-07-17T15:11:24.230366" elapsed="0.003957"/>
+</for>
+<if>
+<branch type="IF" condition="${found} == ${FALSE}">
+<kw name="Log" owner="BuiltIn">
+<arg>Menu '${menu_name}' not found</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.234660" elapsed="0.000092"/>
+</kw>
+<kw name="Fail" owner="BuiltIn">
+<arg>Menu '${menu_name}' not found in the list</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-07-17T15:11:24.234931" elapsed="0.000088"/>
