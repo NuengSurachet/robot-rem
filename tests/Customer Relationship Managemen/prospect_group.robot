@@ -1,9 +1,10 @@
 *** Settings ***
 Resource    ../../../resources/keywords/login.robot
-Resource    ../../../resources/keywords/initial_Data/company.robot
+Resource    ../../resources/keywords/Customer Relationship Managemen/Prospect_group.robot
+
 Test Setup   Login To Application 
 
 
 *** Test Cases ***
 company Test
-    check add new company
+  create Prospect Group
