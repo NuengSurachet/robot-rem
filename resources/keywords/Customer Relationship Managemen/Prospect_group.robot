@@ -125,5 +125,3 @@ create Prospect Group
     Click Element                    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']
     Wait Until Element Is Visible    xpath=//span[contains(text(),'ตกลง')]    15s
     Click Element                    xpath=//span[contains(text(),'ตกลง')]
-     
-    Sleep    311s
