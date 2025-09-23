@@ -9,9 +9,7 @@ create Prospect Group
     ${random_company_name}=    FakerLibrary.Company
     ${random_phone}=    Evaluate    random.choice(['08', '09', '06', '07']) + ''.join([str(random.randint(0,9)) for _ in range(8)])    modules=random
     ${vat_number}=    FakerLibrary.Random Number    digits=13
-    ${name_eng}=    FakerLibrary.First Name Female
-
-    Login To Application
+    ${name_eng}=    FakerLibrary.First Name Female 
     Click Element    ${Customer_Relationship_Management}
     Sleep    4s
     Click Element    xpath=/html[1]/body[1]/form[1]/div[3]/div[1]/div[1]/ul[1]/li[4]/a[1]
@@ -111,17 +109,21 @@ create Prospect Group
     Click Element                    id=btAddress11
 
     Wait Until Element Is Visible    id=ddProvince    15s
+    Sleep    2s
     Select From List By Value        id=ddProvince       10
     Wait Until Element Is Visible    id=ddDistrict    15s
+    Sleep    2s
     Select From List By Value        id=ddDistrict       1009
     Wait Until Element Is Visible    id=ddSubDistrict    15s
-  
+    Sleep    2s
     Wait Until Element Is Visible    xpath=//button[normalize-space()='Ok']    15s
     Sleep    4s
     Click Button                     xpath=//button[normalize-space()='Ok']
 
     # บันทึก
     Wait Until Element Is Visible    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']    15s
+      Sleep    2s
     Click Element                    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']
     Wait Until Element Is Visible    xpath=//span[contains(text(),'ตกลง')]    15s
+    Sleep    2s
     Click Element                    xpath=//span[contains(text(),'ตกลง')]
