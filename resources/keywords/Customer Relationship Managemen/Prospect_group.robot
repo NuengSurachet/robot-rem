@@ -18,6 +18,7 @@ create Prospect Group
      # คำนำหน้า (TH) - Chosen
     Wait Until Element Is Visible    css=#ddNamePrefix_chosen a    15s
     Wait Until Element Is Enabled    css=#ddNamePrefix_chosen a    15s
+    Sleep    2s
     Click Element                    css=#ddNamePrefix_chosen a
     Wait Until Element Is Visible    xpath=//div[@id='ddNamePrefix_chosen']//li[normalize-space()='นาย']    15s
     Click Element                    xpath=//div[@id='ddNamePrefix_chosen']//li[normalize-space()='นาย']
