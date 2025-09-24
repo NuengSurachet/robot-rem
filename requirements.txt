@@ -1,0 +1,6 @@
+robotframework==7.3
+robotframework-seleniumlibrary==6.7.1
+selenium>=4.0
+robotframework-faker==6.0.0
+# faker is a transitive dep of robotframework-faker, but list explicitly for clarity
+Faker>=24.0.0
