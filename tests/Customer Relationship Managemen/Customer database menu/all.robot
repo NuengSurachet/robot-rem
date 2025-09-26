@@ -7,4 +7,4 @@ Test Setup   Login To Application
 
 *** Test Cases ***
 company Test
-    create_customer 
+    create_customer  

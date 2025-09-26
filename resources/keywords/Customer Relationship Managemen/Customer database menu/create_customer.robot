@@ -95,7 +95,7 @@ create_customer
     Wait Until Element Is Visible    id=txtNickname      15s
     Input Text                       id=txtNickname      หนึ่ง
     Wait Until Element Is Visible    id=txtCitizenID     15s
-    Input Text                       id=txtCitizenID     ${random_phone}
+    Input Text                       id=txtCitizenID     ${random_phone}895
 
  # วันที่ออกบัตร: วัน เดือน ปี (พ.ศ.) — ใช้ id ตรงๆ ให้เสถียร
     Wait Until Element Is Visible    id=ddDayIs       15s
@@ -271,8 +271,10 @@ create_customer
  
     # บันทึก
     Wait Until Element Is Visible    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']    15s
-    Click Element                    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']
-    Wait Until Element Is Visible    xpath=(//*[normalize-space()='ตกลง'])[2]    15s
-    Click Element                    xpath=(//*[normalize-space()='ตกลง'])[2]
-   
+    Click Element                    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก'] 
+    Wait Until Page Contains    บันทึกเสร็จสิ้น    15s
+    Sleep    4s
+    Wait Until Page Contains    บันทึกเสร็จสิ้น    15s
+    ${ok}=    Get WebElement    xpath=(//span[normalize-space()='ตกลง'])[last()]/ancestor::*[contains(@class,'icon-ui-button')][1]
+    Call Method    ${ok}    click
     
