@@ -23,7 +23,7 @@ qualify_prospects
     Click Element                      xpath=(//*[normalize-space(.)='ควอลิฟาย'])[1]
     Sleep    2s 
     Click Element                      xpath=//span[contains(text(),'ตกลง')]
-    Sleep                               3s
+    Sleep                               4s
     Click Element                      xpath=//span[contains(text(),'ตกลง')]
     sleep    5s
     Wait Until Element Is Visible    xpath=(//*[normalize-space(.)='กลุ่มผู้มุ่งหวัง'])[1]    10s

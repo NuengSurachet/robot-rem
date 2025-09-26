@@ -5,6 +5,7 @@ Resource    ../../../resources/keywords/Customer Relationship Managemen/propects
 Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/change_status_propects.robot
 Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/qualify_prospects.robot
 Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/dis_qualify_prospects.robot
+Resource    ../../../resources/keywords/Customer Relationship Managemen/Customer database menu/create_customer.robot
 
 Test Setup   Login To Application 
 
@@ -28,3 +29,9 @@ company Test
     Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
     Sleep    2s
     dis_qualify_prospects
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Sleep    5s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
+    create_customer

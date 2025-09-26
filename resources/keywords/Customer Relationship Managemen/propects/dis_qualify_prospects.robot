@@ -26,7 +26,8 @@ dis_qualify_prospects
 
     Wait Until Element Is Visible    xpath=//button[normalize-space()='OK']    15s
     Click Button                     xpath=//button[normalize-space()='OK']
+    Sleep    2s
+    Click Element                    xpath=//span[@class='icon-ui-button']
 
-    Wait Until Element Is Visible    xpath=//*[normalize-space()='ตกลง']    15s
-    Click Element                    xpath=//*[normalize-space()='ตกลง']
     Sleep    5s
+     

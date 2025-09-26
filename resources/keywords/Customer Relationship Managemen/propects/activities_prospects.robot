@@ -10,6 +10,7 @@ Create Activity for Prospect
     ${random_phone}=    Evaluate    random.choice(['08', '09', '06', '07']) + ''.join([str(random.randint(0,9)) for _ in range(8)])    modules=random
     ${vat_number}=    FakerLibrary.Random Number    digits=13
     ${name_eng}=    FakerLibrary.First Name Female 
+    Sleep    2s
     Click Element    ${Customer_Relationship_Management}
     Wait Until Element Is Visible    xpath=//*[text()='กลุ่มผู้มุ่งหวัง']    10s
     Click Element    xpath=//*[text()='กลุ่มผู้มุ่งหวัง']
