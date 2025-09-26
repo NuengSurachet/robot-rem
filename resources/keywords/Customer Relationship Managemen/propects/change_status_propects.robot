@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../login.robot
-Resource    ../../variables/select_menu/select_menu.robot
+Resource    ../../login.robot
+Resource    ../../../variables/select_menu/select_menu.robot
 Library           FakerLibrary    locale=th_TH
 *** Keywords ***
 change_status_propects
