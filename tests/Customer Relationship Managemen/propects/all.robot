@@ -6,6 +6,9 @@ Resource    ../../../resources/keywords/Customer Relationship Managemen/propects
 Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/qualify_prospects.robot
 Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/dis_qualify_prospects.robot
 Resource    ../../../resources/keywords/Customer Relationship Managemen/Customer database menu/create_customer.robot
+Resource    ../../../resources/keywords/Customer Relationship Managemen/Customer database menu/opportunities _customers.robot
+Resource    ../../../resources/keywords/Customer Relationship Managemen/Customer database menu/changing_sales_opportunity_status_win.robot
+Resource    ../../../resources/keywords/Customer Relationship Managemen/Customer database menu/changing_sales_opportunity_status_lost.robot
 
 Test Setup   Login To Application 
 
@@ -35,3 +38,23 @@ company Test
     Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
     Sleep    2s
     create_customer
+    Sleep    5s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
+    opportunities customers
+    Sleep    2s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
+    opportunities customers
+    Sleep    2s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
+    changing_sales_opportunity_status_win
+    Sleep    2s 
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
+    changing_sales_opportunity_status_lost
