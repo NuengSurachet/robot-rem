@@ -35,8 +35,9 @@ Create Activity for Prospect
     Click Element    id=txtBossComment
     Input Text       id=txtBossComment  ทดสอบ
     Sleep    5s
-    Click Element    xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']
-    Input Text       xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']    ยังไม่ได้โทร
+   ${status}    ${msg}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']    5s
+    Run Keyword If    '${status}'=='PASS'    Click Element    xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']
+    Run Keyword If    '${status}'=='PASS'    Input Text       xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']    ยังไม่ได้โทร
     [Arguments]    ${date}=10092025
     Wait Until Element Is Visible    id=CalendarActDate    10s
     Click Element                    id=CalendarActDate

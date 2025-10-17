@@ -11,7 +11,7 @@ create Prospect Group
     ${vat_number}=    FakerLibrary.Random Number    digits=13
     ${name_eng}=    FakerLibrary.First Name Female 
     Click Element    ${Customer_Relationship_Management}
-    Sleep    4s
+    Sleep    5s
     Click Element    xpath=/html[1]/body[1]/form[1]/div[3]/div[1]/div[1]/ul[1]/li[4]/a[1]
     Sleep    4s
     Click Element    xpath=//span[@id='bt12']
@@ -43,7 +43,7 @@ create Prospect Group
     Select From List By Value        id=ddContactStatus    55
 
     Wait Until Element Is Visible    id=ddProject    15s
-    Select From List By Value        id=ddProject    CB0081
+    Select From List By Value        id=ddProject    TR0001
 
     Wait Until Element Is Visible    id=ddLeadChannel    15s
     Select From List By Value        id=ddLeadChannel    423
@@ -61,11 +61,11 @@ create Prospect Group
 
     # นามสกุล (EN)
     Wait Until Element Is Visible    id=txtLastName    15s
-    Input Text                       id=txtLastName    Oliver
+    Input Text                       id=txtLastName    ${name_eng}s
 
     # ชื่อ (EN)
     Wait Until Element Is Visible    xpath=//tr[contains(.,'ชื่อ (EN')]//input[@placeholder='อย่างใดอย่างหนึ่ง']    15s
-    Input Text                       xpath=//tr[contains(.,'ชื่อ (EN')]//input[@placeholder='อย่างใดอย่างหนึ่ง']    ${name_eng}
+    Input Text                       xpath=//tr[contains(.,'ชื่อ (EN')]//input[@placeholder='อย่างใดอย่างหนึ่ง']    ${name_eng}q
  
     # เบอร์มือถือหลัก
     Wait Until Element Is Visible    xpath=//*[@id='mobileNo_info']//input    15s
@@ -73,11 +73,11 @@ create Prospect Group
 
     # เบอร์มือถือรอง
     Wait Until Element Is Visible    xpath=(//tr[contains(.,'เบอร์โทรศัพท์มือถือ')])[1]//input[2]    15s
-    Input Text                       xpath=(//tr[contains(.,'เบอร์โทรศัพท์มือถือ')])[1]//input[2]    ${random_phone}
+    Input Text                       xpath=(//tr[contains(.,'เบอร์โทรศัพท์มือถือ')])[1]//input[2]    ${random_phone}6
 
     # ที่อยู่
     Wait Until Element Is Visible    id=txtAddressNo    15s
-    Input Text                       id=txtAddressNo       1/2504
+    Input Text                       id=txtAddressNo       1/4504
     Press Keys                       id=txtAddressNo       \\09
 
     Wait Until Element Is Visible    id=txtAddressNoEN    15s
@@ -125,6 +125,7 @@ create Prospect Group
     Wait Until Element Is Visible    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']    15s
       Sleep    2s
     Click Element                    xpath=//*[@id='spanSaveGroup']//*[normalize-space()='บันทึก']
+    Sleep    9999
     Wait Until Element Is Visible    xpath=//span[contains(text(),'ตกลง')]    15s
     Sleep    2s
     Click Element                    xpath=//span[contains(text(),'ตกลง')]

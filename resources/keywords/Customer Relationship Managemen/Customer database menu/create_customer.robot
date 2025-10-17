@@ -149,7 +149,7 @@ create_customer
 
     # เบอร์มือถือ
     Wait Until Element Is Visible    xpath=//*[@id='mobileNo_info']//input    15s
-    Input Text                       xpath=//*[@id='mobileNo_info']//input    ${random_phone}
+    Input Text                       xpath=//*[@id='mobileNo_info']//input    FakerLibrary.phone
 
     # อาชีพ
     Wait Until Element Is Visible    id=ddOccupation         15s
