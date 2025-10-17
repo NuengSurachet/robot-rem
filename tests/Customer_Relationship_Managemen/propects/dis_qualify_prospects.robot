@@ -1,10 +1,10 @@
 *** Settings ***
 Resource    ../../../resources/keywords/login.robot
-Resource    ../../resources/keywords/Customer Relationship Managemen/change_status_propects.robot
- 
+Resource    ../../../resources/keywords/Customer Relationship Managemen/propects/dis_qualify_prospects.robot
+
 Test Setup   Login To Application 
 
 
 *** Test Cases ***
 company Test
-  change_status_propects
+  dis_qualify_prospects

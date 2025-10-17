@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../login.robot
-Resource    ../../variables/select_menu/select_menu.robot
+Resource    ../../login.robot
+Resource    ../../../variables/select_menu/select_menu.robot
 Library           FakerLibrary    locale=th_TH
 *** Keywords ***
 qualify_prospects
@@ -23,7 +23,7 @@ qualify_prospects
     Click Element                      xpath=(//*[normalize-space(.)='ควอลิฟาย'])[1]
     Sleep    2s 
     Click Element                      xpath=//span[contains(text(),'ตกลง')]
-    Sleep                               3s
+    Sleep                               4s
     Click Element                      xpath=//span[contains(text(),'ตกลง')]
     sleep    5s
     Wait Until Element Is Visible    xpath=(//*[normalize-space(.)='กลุ่มผู้มุ่งหวัง'])[1]    10s
@@ -34,3 +34,6 @@ qualify_prospects
     Sleep    2s
     Wait Until Element Is Visible    id=btSearch2    5s
     Click Button                      id=btSearch2
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
