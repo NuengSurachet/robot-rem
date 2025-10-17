@@ -277,4 +277,7 @@ create_customer
     Wait Until Page Contains    บันทึกเสร็จสิ้น    15s
     ${ok}=    Get WebElement    xpath=(//span[normalize-space()='ตกลง'])[last()]/ancestor::*[contains(@class,'icon-ui-button')][1]
     Call Method    ${ok}    click
-    
+    Sleep    5s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s

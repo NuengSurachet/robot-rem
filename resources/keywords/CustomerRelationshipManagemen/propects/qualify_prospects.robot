@@ -34,3 +34,6 @@ qualify_prospects
     Sleep    2s
     Wait Until Element Is Visible    id=btSearch2    5s
     Click Button                      id=btSearch2
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s

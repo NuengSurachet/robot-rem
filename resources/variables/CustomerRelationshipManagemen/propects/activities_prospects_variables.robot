@@ -1,0 +1,10 @@
+*** Variables ***
+${Prospect_Group_Tab}              xpath=//*[text()='กลุ่มผู้มุ่งหวัง']
+${Activity_Tab}                    xpath=//li[@pkey='Activity']//a[contains(text(),'กิจกรรม')]
+${New_Activity_Button}             xpath=//span[@id='btNewAct2']
+${Need_Checkbox}                   xpath=//label[normalize-space()='ต้องการ']/preceding-sibling::input[@type='checkbox']
+${CallNote_Textarea}               xpath=//textarea[@id='txt_50036e06-111a-4b7c-9d66-72a7ebe11245']
+${Save_Button_trControl}           xpath=//*[@id="trControl"]//*[text()='บันทึก']
+${Confirm_Span}                    xpath=//span[contains(text(),'ตกลง')]
+${Planning_Link}                   xpath=//a[contains(text(),'การวางแผน')]
+${Main_Menu_Label}                 xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]

@@ -16,45 +16,22 @@ Test Setup   Login To Application
 *** Test Cases ***
 company Test
     create Prospect Group
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+   
     Create Activity for Prospect
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
     change_status_propects 
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
     qualify_prospects
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
     dis_qualify_prospects
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Sleep    5s
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
+    
     create_customer
-    Sleep    5s
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
+    
     opportunities customers
-    Sleep    2s
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
-    opportunities customers
-    Sleep    2s
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+     
+   
     changing_sales_opportunity_status_win
-    Sleep    2s 
-    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
-    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
-    Sleep    2s
+    
     changing_sales_opportunity_status_lost

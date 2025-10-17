@@ -4,7 +4,7 @@ Resource    ../../login.robot
 Resource    ../../../variables/select_menu/select_menu.robot
 Library           FakerLibrary    locale=th_TH
 *** Keywords ***
-changing_sales_opportunity_status_lost
+changing_sales_opportunity_status_win
     ${random_company_id}=    FakerLibrary.Random Int    100000    999999
     ${random_company_name}=    FakerLibrary.Company
     ${random_phone}=    Evaluate    random.choice(['08', '09', '06', '07']) + ''.join([str(random.randint(0,9)) for _ in range(8)])    modules=random
@@ -32,11 +32,11 @@ changing_sales_opportunity_status_lost
 
     # เลือกสถานะ
     Wait Until Element Is Visible    css:#ddStatus    10s
-    Select From List By Label        css:#ddStatus    ปิดการขาย(แพ้)
+    Select From List By Label        css:#ddStatus    ปิดการขาย(ชนะ)
 
     # เลือกเหตุผล (ตาม value = 65)
     Wait Until Element Is Visible    css:#ddReason    10s
-    Select From List By Value        css:#ddReason    4128
+    Select From List By Value        css:#ddReason    65
 
     # กดยืนยัน "ตกลง" ปุ่มแรก (อาจเป็น button/a/span ที่ทำหน้าที่เป็นปุ่ม)
     Wait Until Element Is Visible    xpath=//*[self::button or self::a or self::span][normalize-space(.)='ตกลง']    10s
@@ -46,10 +46,12 @@ changing_sales_opportunity_status_lost
     # ถ้ามีข้อความแจ้ง "บันทึกเสร็จสิ้น" ให้เจาะใน popup เพื่อลดการคลิกผิด
     # รอให้ popup โผล่ (ข้อความใดข้อความหนึ่ง)
     Wait Until Page Contains    เปลี่ยนแปลงสถานะเสร็จสิ้น    10s
-    Wait Until Element Is Visible    xpath=//div[.//div[normalize-space(.)='สถานะ'] and contains(.,'เปลี่ยนแปลงสถานะเสร็จสิ้น')]//span[contains(@class,'icon-ui-button')]    10s
-    Click Element                    xpath=//div[.//div[normalize-space(.)='สถานะ'] and contains(.,'เปลี่ยนแปลงสถานะเสร็จสิ้น')]//span[contains(@class,'icon-ui-button')]
+    Click Element    xpath=//div[contains(.,'เปลี่ยนแปลงสถานะเสร็จสิ้น')]//span[normalize-space(.)='ตกลง']
 
     # ถ้ายังไม่ยิง ให้ fallback คลิก parent ที่เป็นปุ่ม
     # Click Element    xpath=//div[contains(.,'บันทึกเสร็จสิ้น')]//span[contains(@class,'icon-ui-button')]
 
- 
+     Sleep    2s 
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s

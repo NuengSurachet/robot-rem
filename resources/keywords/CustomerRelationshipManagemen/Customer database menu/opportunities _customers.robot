@@ -78,3 +78,7 @@ opportunities customers
     # คลิก "ตกลง" ตัวที่ 3 (nth(2) ของ Playwright)
     Wait Until Element Is Visible    xpath=//span[contains(@class,'icon-ui-button')]//span[normalize-space(.)='ตกลง']    10s
     Click Element                    xpath=//span[contains(@class,'icon-ui-button')]//span[normalize-space(.)='ตกลง']
+    Sleep    2s
+    Wait Until Element Is Visible    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]    10s
+    Click Element    xpath=(//*[normalize-space(text())='เมนูหลัก'])[1]
+    Sleep    2s
